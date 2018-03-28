@@ -15,8 +15,8 @@ id 	SERIAL	 PRIMARY KEY
 INSERT INTO gender 
 (name)
 VALUES
-('male'),
-('female');
+('Male'),
+('Female');
 
 
 -- Create student table 
