@@ -20,7 +20,7 @@ VALUES
 
 
 -- Create student table 
-CREATE TABLE student(
+CREATE TABLE student (
 id 				SERIAL   		PRIMARY KEY
 ,name_first		VARCHAR(100)
 ,name_last		VARCHAR(100)
@@ -29,6 +29,12 @@ id 				SERIAL   		PRIMARY KEY
 ,gender			INT      		REFERENCES gender(id)	
 );
 
+INSERT INTO student 
+	(name_first, name_last,birthday,byui_id,gender)
+	VALUES
+	('Preston', 'Taylor', 'JAN 02 1998', 1234567, 1),
+	('Michael', 'Remington','MAR 07 1991', 1234567, 1);
+
 CREATE TABLE employee (
 id 				SERIAL			PRIMARY KEY
 ,name_first 	VARCHAR(100)
@@ -36,7 +42,7 @@ id 				SERIAL			PRIMARY KEY
 );
 
 -- Create visit table
-CREATE TABLE visit(
+CREATE TABLE visit (
 id 				SERIAL 			PRIMARY KEY
 ,visit_date		DATE
 ,student_id		INT 			REFERENCES student(id)
